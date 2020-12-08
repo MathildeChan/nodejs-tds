@@ -8,6 +8,6 @@ app.listen(port, () =>{
     console.log('Server listening at http://localhost:$(post)');
 })
 
-app.get('/', (res, res, next) => {
+app.get('/', (req, res, next) => {
     res.send("Bonjour !");
 });
