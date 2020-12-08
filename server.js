@@ -9,5 +9,5 @@ app.listen(port, () =>{
 })
 
 app.get('/', (req, res, next) => {
-    res.send("Bonjour tout le monde!");
+    res.send("Bonjour à tous les amis, c'est Mikoto!");
 });
