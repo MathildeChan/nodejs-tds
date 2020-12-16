@@ -28,3 +28,8 @@ app.get('/', (req, res, next) => {
 app.get('/blog', (req, res, next) => {
     res.render('blog.ejs');
 })
+
+//      BLOG
+app.use((req, res, next) => {
+    res.status(404).render('error.ejs');
+})
