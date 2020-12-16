@@ -4,6 +4,8 @@ let app = express();
 let port = 3000;
 
 //Préparation du serveur
+app.set('view engine', 'ejs');  //On définit ejs comme le moteur de vues
+app.use('/views', express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/www'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
@@ -15,7 +17,8 @@ app.listen(port, () =>{
     console.log(`Server listening at http://localhost:${port}`);
 })
 
-//Routes
+
+//Vues
 app.get('/', (req, res, next) => {
-    res.sendFile('www/index.html');
-});
+    res.render('index.ejs');
+})
