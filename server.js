@@ -19,6 +19,12 @@ app.listen(port, () =>{
 
 
 //Vues
+//      INDEX
 app.get('/', (req, res, next) => {
     res.render('index.ejs');
+})
+
+//      BLOG
+app.get('/blog', (req, res, next) => {
+    res.render('blog.ejs');
 })
