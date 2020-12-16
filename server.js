@@ -18,10 +18,15 @@ app.listen(port, () =>{
 })
 
 
+let myObject = {
+    nom: "MyObject",
+    valeur: "10"
+}
+
 //Vues
-//      INDEX
+//      INDEX   -   Avec variable passée
 app.get('/', (req, res, next) => {
-    res.render('index.ejs');
+    res.render('index.ejs', {myObject: myObject});
 })
 
 //      BLOG
@@ -29,7 +34,8 @@ app.get('/blog', (req, res, next) => {
     res.render('blog.ejs');
 })
 
-//      BLOG
+//      RECEPTION DES ERREURS (404)
 app.use((req, res, next) => {
     res.status(404).render('error.ejs');
 })
+
